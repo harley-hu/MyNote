@@ -3,7 +3,7 @@
 ## 一、背景
 通常在建立工程时，做模块化划分时，需要将代码模块化，因而会导致一个工程往往依赖多个模块，当将这些模块作为SDK上传Maven库时，每个module只会上传其模块内的代码，而其依赖的module都是即使是工程依赖，都会变成Maven依赖，最后生成的POM文件其依赖会出现groupId、version不对的情况,如下图：
 
-![maven_pom](./img/maven_pom.webp)
+![maven_pom](https://github.com/harley-hu/MyNote/raw/main/assets/maven_pom.webp)
 
 现参考[填坑：有工程依赖时，Gradle uploadArchives to Nexus/Maven]完整实现多module maven上传功能。
 
