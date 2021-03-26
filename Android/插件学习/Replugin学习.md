@@ -237,9 +237,10 @@ installPluginTask.doLast {
 ```
 从上述代码中可以看出，`InstallPlugin` task主要通过启动宿主APP、安装插件等步骤完成，具体实现通过adb命令完成相关交互。
 
-**2.替换系统类和方法**
-通过[javassist]对编译后的系统组件或者方法进行替换，主要实现在如下几个类中：
-![企业微信截图_3ecbca0f-7127-44b7-8804-816d74adc91f](/assets/企业微信截图_3ecbca0f-7127-44b7-8804-816d74adc91f.png)
+**2.替换系统类和方法**  
+通过[javassist]对编译后的系统组件或者方法进行替换，主要实现在如下几个类中：  
+![企业微信截图_3ecbca0f-7127-44b7-8804-816d74adc91f](/assets/企业微信截图_3ecbca0f-7127-44b7-8804-816d74adc91f.png)  
+
 其中以资源获取方法和Activity组件替换为例：
 ```groovy
 public class GetIdentifierExprEditor extends ExprEditor {
@@ -726,8 +727,9 @@ xml.application {
           }
 ```
 * 解析内置插件，创建plugins-builtin.json文件
-解析编译的`assert`目录，解析内置插件，生成json文件，以demo为例，在assert目录下有3个内置插件：
+解析编译的`assert`目录，解析内置插件，生成json文件，以demo为例，在assert目录下有3个内置插件：  
 ![企业微信截图_867b840e-e0bb-4da9-8684-c1840eab72ce](/assets/企业微信截图_867b840e-e0bb-4da9-8684-c1840eab72ce.png)
+
 则最后生成的json文件如下：
 ```json
 [
@@ -956,8 +958,10 @@ public class BaseDexClassLoader extends ClassLoader{
         ....
       }
 ```
-以加载`Activity`为例，会通过`mContainerActivities`进行判断,而值就是坑位的`Activity`集合：
-![企业微信截图_0963aa79-ce12-4f32-a65d-8f426de2f889](/assets/企业微信截图_0963aa79-ce12-4f32-a65d-8f426de2f889.png)
+以加载`Activity`为例，会通过`mContainerActivities`进行判断,而值就是坑位的`Activity`集合:
+
+![企业微信截图_0963aa79-ce12-4f32-a65d-8f426de2f889](/assets/企业微信截图_0963aa79-ce12-4f32-a65d-8f426de2f889.png)  
+
 而`mContainerActivities`会Replugin框架初始化进行加载，会根据`Activity`状态（[rePlugin-host-gradle](#replugin-host-gradle)介绍的坑位），如是否透明、启动模式、进程等规则定义名称，具体实现可以直接看代码`PluginContainers.init()`方法。
 
 因此，当`ClassLoader`加载坑位时，会执行`mClient.resolveActivityClass(className)`:
@@ -1099,7 +1103,9 @@ V5插件又通过具体插件文件，生成`PluginInfo`,具体见`V5Finder`类�
 插件的名字、最低版本、最高版本、当前版本用"-"进行分割。具体见`V5Finder`类和`Finder`类。
 * 将无效和禁用插件删除。
 * 将插件相关信息保存在`PxAll`中：
+
 ![企业微信截图_238b3eed-5bff-456f-a0e9-3b0ecfe7a2c3](/assets/企业微信截图_238b3eed-5bff-456f-a0e9-3b0ecfe7a2c3.png)
+
 2. 解析已安装的插件
 在`initForServer`方法中，会通过`PluginManagerProxy.load()`去加载插件信息，其最终实现：
 ```java
@@ -1323,7 +1329,9 @@ public class Plugin{
 }
 ```
 该方法中存在两个参数，一个是加载类型，另一个表示是否使用缓存。加载类型主要包含：
+
 ![企业微信截图_fe07356b-57c3-400e-b363-e241053f881e](/assets/企业微信截图_fe07356b-57c3-400e-b363-e241053f881e.png)
+
 分别用来加载资源、类文件和获取插件基本组件信息等。
 其会首先调用`loadLocked`方法，在该方法中，会判断当前插件是否已经加载，如果已经加载，直接根据加载类型，返回特定值，当前先不具体介绍。而对于插件首次加载，加载类型为`LOAD_APP`,其主要实现方法：
 ```java
