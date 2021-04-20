@@ -1,1 +1,1 @@
-[MVVM学习总结](https://github.com/harley-hu/MVVM/blob/main/doc/%E5%AD%A6%E4%B9%A0%E6%96%87%E6%A1%A3.md)
+[MVVM学习总结](https://mp.weixin.qq.com/s?__biz=MzU4ODk3MzEzOA==&tempkey=MTEwOV9ESitqVFZTVUV6empkL05PSDFHWDhXMlV5T3ZqNFd1MXNyQUhzZlhXQl9JdENqejk1MmhCSlZGdGY3UFFkeGdLMFh2VGdtSlpENkZ4NjB1Y3c5U21XNGgxLXRRcDlib2p6X0x3MXlUNFNuTENOYTIxT1RKNHR3X1ZmbnRmNDctMnVNYXQxQ0ZscGduMkUwOTNWU3BHcDFsajk1U2ZEcTc2YzBlbUtnfn4%3D&chksm=7dd5d4d64aa25dc0b7cad6a6538f6496e9bcced351c6e72d913cb170fdec25ed4239495de940#rd)
